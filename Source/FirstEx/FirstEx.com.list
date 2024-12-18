@@ -1,0 +1,103 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+FirstEx.com -- emu8086 assembler version: 4.08  
+ 
+[ 2024-09-26  --  18:36:07 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       ; You may customize this and other start-up templates;
+[   3]        :                                       ; The location of this template is c:\emu8086\inc\0_com_template.txt
+[   4]        :                                       
+[   5]        :                                       org 100h
+[   6]        :                                       
+[   7]        :                                       ; add your code here
+[   8]        :                                       
+[   9]        :                                       ; mov instruction
+[  10]        :                                       ; mov AL, 7 this will move 7 to the AL register
+[  11]        :                                       ;MOV AL, 5  ; AL = 5
+[  12]        :                                       ;MOV BL, 10
+[  13]        :                                       
+[  14]        :                                       
+[  15]        :                                       ; add instruction
+[  16]        :                                       ; add AL, 10 this will add 10 to register AL
+[  17]        :                                       ; operand 1 = operand 1 + operand 2
+[  18]        :                                       ;ADD AL, -3 ; AL = 2
+[  19]        :                                       
+[  20]        :                                       ;mov ax, 9    ;ax = 9
+[  21]        :                                       ;mov bx, 3    ;bx = 3
+[  22]        :                                       ;add ax, bx   ;ax + bx = 12 = C
+[  23]        :                                       ;add ax, 5    ;ax = 11h
+[  24]        :                                       
+[  25]        :                                       
+[  26]        :                                       ; sub instruction
+[  27]        :                                       ; operand 1 = operand 1 - operand 2
+[  28]        :                                       ; mov al, 5
+[  29]        :                                       ; sub AL, 1 ; al=4
+[  30]        :                                       
+[  31]        :                                       ;mov al, 10
+[  32]        :                                       ;sub al, 5
+[  33]        :                                       
+[  34]        :                                       
+[  35]        :                                       ; MUL instruction
+[  36]        :                                       ; when operand is byte
+[  37]        :                                       ; ax = al * operand
+[  38]        :                                       ; RESULT IS STORED IN AX
+[  39]        :                                       ;mov al, 80
+[  40]        :                                       ;mov bl, 70
+[  41]        :                                       ;mul bl
+[  42]        :                                       
+[  43]        :                                       
+[  44]        :                                       ; when operand is a word
+[  45]        :                                       ; (DX AX) = AX * operand
+[  46]        :                                       ; RESULT IS DX AX
+[  47]        :                                       ; OR DH DL AH AL
+[  48]        :                                       ;mov ax, 800 ;more than 8 bits use ax
+[  49]        :                                       ;mov bx, 700
+[  50]        :                                       ;mul bx
+[  51]        :                                       ; Result = 00 08 8B 80
+[  52]        :                                       ;          DH DL AH AL
+[  53]        :                                       
+[  54]        :                                       ; IMUL for signed mulitply
+[  55]        :                                       ;mov al, -2
+[  56]        :                                       ;mov bl, -4
+[  57]        :                                       ;imul bl
+[  58]        :                                       
+[  59]        :                                       
+[  60]        :                                       
+[  61]        :                                       ;DIV instruction
+[  62]        :                                       ; when operand is byte
+[  63]        :                                       ; AL = AX / operand
+[  64]        :                                       ; AH = remainder
+[  65]        :                                       ;mov ax, 203
+[  66]        :                                       ;mov bl, 4
+[  67]        :                                       ;div bl
+[  68]        :                                       
+[  69]        :                                       ; when operand is a word
+[  70]        :                                       ; AX = (DX AX) / operand
+[  71]        :                                       ; DX = remainder
+[  72]    0100: BA 57 1F                              mov dx, 8023
+[  73]    0103: B8 B9 0F                              mov ax, 4025
+[  74]    0106: BB 29 0E                              mov bx, 3625
+[  75]    0109: F7 F3                                 div bx
+[  76]        :                                       
+[  77]        :                                       ; these two will be in different registers
+[  78]        :                                       
+[  79]    010B: C3                                    ret
+[  80]        :                                       
+[  81]        :                                       
+[  82]        :                                       
+[  83]        :                                       
+[  84]        :                                       
+[  85]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
